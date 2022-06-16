@@ -62,3 +62,52 @@ select dep_id, count(dep_id) from employees group by dep_id;
 select dep_id, avg(salary) as AVG_SALARY,count(dep_id) as NUM_EMPLOYEES from employees group by dep_id;
 select dep_id, avg(salary) as AVG_SALARY,count(dep_id) as NUM_EMPLOYEES from employees group by dep_id order by AVG_SALARY;
 select dep_id, avg(salary) as AVG_SALARY,count(dep_id) as NUM_EMPLOYEES from employees group by dep_id having NUM_EMPLOYEES <="3";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use company;
+-- select average salary of all employees
+select avg(salary) from employees;
+-- select average salary of all employees with salary less than average salary
+select * from employees where salary<(select avg(salary) from employees);
+-- select employee id, salary and the maximum salary
+select emp_id, salary, (select max(salary) as MAX_SALARY from employees) from employees;
+-- select all columns except senitive info
+select * from (select emp_id, f_name,L_name, job_id,manager_id,dep_id from employees) as emp_info;
+-- select all records in employees and jobs
+select * from employees, jobs;
+-- select employees which have corresponding data in jobs table
+select * from employees e, jobs j where e.job_id=j.job_ident;
+-- select employee id, employee name and job title of employees which have corresponding data in jobs table
+select e.emp_id, e.f_name, e.l_name, j.job_title from employees e, jobs j where e.job_id=j.job_ident;
