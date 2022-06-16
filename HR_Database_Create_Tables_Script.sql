@@ -62,41 +62,6 @@ select dep_id, count(dep_id) from employees group by dep_id;
 select dep_id, avg(salary) as AVG_SALARY,count(dep_id) as NUM_EMPLOYEES from employees group by dep_id;
 select dep_id, avg(salary) as AVG_SALARY,count(dep_id) as NUM_EMPLOYEES from employees group by dep_id order by AVG_SALARY;
 select dep_id, avg(salary) as AVG_SALARY,count(dep_id) as NUM_EMPLOYEES from employees group by dep_id having NUM_EMPLOYEES <="3";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-use company;
 -- select average salary of all employees
 select avg(salary) from employees;
 -- select average salary of all employees with salary less than average salary
